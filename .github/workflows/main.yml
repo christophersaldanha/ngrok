@@ -10,10 +10,10 @@ jobs:
     steps:
     - name: Download ngrok v3.7.0 or higher
       run: |
-        Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
-
+        Invoke-WebRequest https://github.com/inconshreveable/ngrok/releases/download/v3.7.0/ngrok-v3.7.0-windows-amd64.zip -OutFile ngrok_latest.zip
+        
     - name: Extract ngrok
-      run: Expand-Archive ngrok.zip -DestinationPath .\ngrok
+      run: Expand-Archive ngrok_latest.zip -DestinationPath .\ngrok
 
     - name: Check ngrok version
       run: |
